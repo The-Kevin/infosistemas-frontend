@@ -6,5 +6,5 @@ export interface IVehicleModelYear extends IGenericModel {
     year: number;
     plate: string;
     renavam: string;
-    model?: Exclude<IVehicleModel, { vehicleModelYears: IVehicleModelYear[] }>;
+    model?: IVehicleModel;
 }

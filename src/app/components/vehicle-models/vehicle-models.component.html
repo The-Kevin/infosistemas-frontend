@@ -1,1 +1,13 @@
-<p>vehicle-models works!</p>
+<div *ngIf="vehicleModels && vehicleModels.length > 0; else noModels">
+    <h2>Vehicle Models</h2>
+    <ul>
+      <li *ngFor="let model of vehicleModels">
+        <strong>Model Name:</strong> {{ model.name }}
+        <button [routerLink]="['/vehicle-models/', model.id]">View Details</button>
+      </li>
+    </ul>
+  </div>
+  
+  <ng-template #noModels>
+    <p>No vehicle models found.</p>
+  </ng-template>

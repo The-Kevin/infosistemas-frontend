@@ -38,7 +38,7 @@ export class RequestsService {
   getVehicleModelYear(vehicleModelYear: string): Observable<IVehicleModelYear> {
     return this.http.get<IVehicleModelYear>(this.baseUrl + '/vehicle-model-year/' + vehicleModelYear)
   }
-  listVehicleModelYears(): Observable<IVehicleModelYear[]> {
-    return this.http.get<IVehicleModelYear[]>(this.baseUrl + '/vehicle-model-year')
+  listVehicleModelYears(): Observable<IGenericList<IVehicleModelYear>> {
+    return this.http.get<IGenericList<IVehicleModelYear>>(this.baseUrl + '/vehicle-model-year')
   }
 }

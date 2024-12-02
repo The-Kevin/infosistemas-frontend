@@ -1,1 +1,33 @@
-<p>vehicle-model-years works!</p>
+<div *ngIf="vehicleModelsYears && vehicleModelsYears.length > 0; else noModels">
+  <h2>Vehicle Model Years</h2>
+  <ul>
+    <li *ngFor="let modelYear of vehicleModelsYears">
+      <div>
+        <p>
+          <strong>Model Name:</strong>
+          <button [routerLink]="['/vehicle-models', modelYear.model?.id]">
+            {{ modelYear.model?.name || 'Unknown Model' }}
+          </button>
+        </p>
+        <p><strong>Name:</strong> {{ modelYear.name }}</p>
+        <p><strong>Year:</strong> {{ modelYear.year }}</p>
+        <p><strong>Plate:</strong> {{ modelYear.plate }}</p>
+        <p><strong>Renavam:</strong> {{ modelYear.renavam }}</p>
+
+        <div *ngIf="modelYear.model?.brand">
+          <p>
+            <strong>Brand:</strong>
+            <button [routerLink]="['/brands', modelYear.model?.brand?.id]">
+              {{ modelYear.model?.brand?.name }}
+            </button>
+          </p>
+        </div>
+      </div>
+      <hr />
+    </li>
+  </ul>
+</div>
+
+<ng-template #noModels>
+  <p>No vehicle model years found.</p>
+</ng-template>

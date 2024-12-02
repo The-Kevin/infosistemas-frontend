@@ -4,7 +4,7 @@ import { IVehicleModelYear } from './vehicleModelYear.interface';
 
 export interface IVehicleModel extends IGenericModel {
     name: string;
-    brand?: IBrand;
+    brand: IBrand;
 
     vehicleModelYears: IVehicleModelYear[];
 }
