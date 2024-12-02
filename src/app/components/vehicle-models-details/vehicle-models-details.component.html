@@ -1,0 +1,20 @@
+<div *ngIf="vehicleModel">
+    <h3>Vehicle Model Details</h3>
+    
+    <strong>Model Name:</strong> {{ vehicleModel.name }}<br>
+    <strong>Brand Name:</strong> {{ vehicleModel.brand?.name || 'N/A' }}<br>
+    
+    <h4>Model Years</h4>
+    <ul>
+      <li *ngFor="let modelYear of vehicleModel.vehicleModelYears">
+        <strong>Name:</strong> {{ modelYear.name }}<br>
+        <strong>Year:</strong> {{ modelYear.year }}<br>
+        <!-- <button (click)="goToModelYearDetails(modelYear.id)">View Details</button> -->
+        <hr>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="!vehicleModel">
+    <p>Loading vehicle model details...</p>
+  </div>

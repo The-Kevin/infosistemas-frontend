@@ -1,1 +1,22 @@
-<p>brands works!</p>
+<h2>Brands</h2>
+
+<div *ngIf="!selectedBrandId">
+  <ul>
+    <li *ngFor="let brand of brands">
+      <button (click)="onSelectBrand(brand.id)">
+        {{ brand.name }}
+      </button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedBrandId">
+  <h3>Vehicle Models</h3>
+  <ul>
+    <li *ngFor="let model of vehicleModels">
+      <button [routerLink]="['/vehicle-models/', model.id]">
+        {{ model.name }}
+      </button>
+    </li>
+  </ul>
+</div>
