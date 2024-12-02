@@ -1,59 +1,62 @@
-# InfosistemasFrontend
+# Infosistemas Frontend Desafio Técnico
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+## Rotas
 
-## Development server
+- **`/brands`**: Exibe a lista de marcas.  
+  Componente: `BrandsComponent`  
+  Imagem:  
+  ![List Brands](docs/list_brands.png)
 
-To start a local development server, run:
+- **`/brands/:id`**: Exibe os detalhes de uma marca específica.  
+  Componente: `BrandsDetailsComponent`  
+  Imagem:  
+  ![Detail Brand](docs/detail_brand.png)
 
-```bash
-ng serve
-```
+- **`/vehicle-models`**: Exibe a lista de modelos de veículos.  
+  Componente: `VehicleModelsComponent`  
+  Imagem:  
+  ![List Vehicle Models](docs/list_vehicle_model.png)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **`/vehicle-models/:id`**: Exibe os detalhes de um modelo de veículo específico.  
+  Componente: `VehicleModelsDetailsComponent`  
+  Imagem:  
+  ![Detail Vehicle Model](docs/detail_vehicle_model.png)
 
-## Code scaffolding
+- **`/vehicle-model-years`**: Exibe a lista de anos de modelos de veículos.  
+  Componente: `VehicleModelYearsComponent`  
+  Imagem:  
+  ![List Vehicle Model Years](docs/list_vehicle_model_years.png)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **`/vehicle-model-years/:id`**: Exibe os detalhes de um ano de modelo de veículo específico.  
+  Componente: `VehicleModelsYearDetailsComponent`  
+  Imagem:  
+  ![Detail Vehicle Model Year](docs/detail_vehicle_model_year.png)
 
-```bash
-ng generate component component-name
-```
+- **Redirecionamento**: Quando a URL não é reconhecida, o usuário é redirecionado para a página de marcas (`/brands`).
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Dependências e Configuração
 
-```bash
-ng generate --help
-```
+### Ambiente de Desenvolvimento
+1. Instalar as dependências:
+    ```bash
+    npm install
+    ```
 
-## Building
+2. Defina a URL do servidor back-end:
+    ```bash
+    cp .env.example .env
+    ```
 
-To build the project run:
+3. Executar o servidor de desenvolvimento:
+    ```bash
+    ng serve
+    ```
 
-```bash
-ng build
-```
+**Importante**: O servidor [back-end](https://github.com/The-Kevin/infosistemas) deve estar em pleno funcionamento antes de iniciar este projeto!
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Ferramentas
+- **Angular CLI**: Usado para rodar o servidor e construir o projeto.
+- **Angular Router**: Gerencia as navegações entre as páginas de marcas, modelos de veículos e anos de modelos.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Problemas de Desenvolvimento
+Infelizmente, não tive tempo para criar um template com melhor visual ou melhorar as listagens com paginação e ordenação. Caso seja estritamente necessário para aprovação do desafio, por favor me avise e criarei o que falta.
