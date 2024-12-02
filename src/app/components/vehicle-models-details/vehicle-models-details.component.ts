@@ -18,7 +18,6 @@ export class VehicleModelsDetailsComponent {
 
   ngOnInit(): void {
     this.vehicleModelId = this.route.snapshot.paramMap.get('id')
-    console.log("o id aqui: ", this.route.snapshot.paramMap.get('id'))
     if (this.vehicleModelId) {
       this.loadModelDetail(this.vehicleModelId)
     }

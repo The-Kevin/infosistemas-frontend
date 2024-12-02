@@ -1,0 +1,20 @@
+<div *ngIf="vehicleModelYear">
+    <h3>Vehicle Model Year Details</h3>
+  
+    <strong>Name:</strong> {{ vehicleModelYear.name }}<br>
+    <strong>Year:</strong> {{ vehicleModelYear.year }}<br>
+    <strong>Plate:</strong> {{ vehicleModelYear.plate }}<br>
+    <strong>Renavam:</strong> {{ vehicleModelYear.renavam }}<br>
+  
+    <h4>Associated Vehicle Model</h4>
+
+    <strong>Model Name: </strong>
+    <button [routerLink]="['/vehicle-models/', vehicleModelYear.model?.id]">{{ vehicleModelYear.model?.name || '' }}</button><br>
+    
+    <strong>Brand Name: </strong>
+    <button [routerLink]="['/brands/', vehicleModelYear.model?.brand?.id]">{{ vehicleModelYear.model?.brand?.name || '' }}</button><br>
+  </div>
+  
+  <div *ngIf="!vehicleModelYear">
+    <p>Loading vehicle model year details...</p>
+  </div>

@@ -7,6 +7,8 @@ import { VehicleModelsComponent } from './components/vehicle-models/vehicle-mode
 import { VehicleModelYearsComponent } from './components/vehicle-model-years/vehicle-model-years.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VehicleModelsDetailsComponent } from './components/vehicle-models-details/vehicle-models-details.component';
+import { VehicleModelsYearDetailsComponent } from './components/vehicle-models-year-details/vehicle-models-year-details.component';
+import { BrandsDetailsComponent } from './components/brands-details/brands-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { VehicleModelsDetailsComponent } from './components/vehicle-models-detai
     BrandsComponent,
     VehicleModelsComponent,
     VehicleModelYearsComponent,
-    VehicleModelsDetailsComponent
+    VehicleModelsDetailsComponent,
+    VehicleModelsYearDetailsComponent,
+    BrandsDetailsComponent
   ],
   imports: [
     BrowserModule,

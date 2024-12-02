@@ -6,5 +6,5 @@ export interface IVehicleModel extends IGenericModel {
     name: string;
     brand?: IBrand;
 
-    vehicleModelYears?: IVehicleModelYear[];
+    vehicleModelYears: IVehicleModelYear[];
 }

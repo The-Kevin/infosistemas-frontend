@@ -1,15 +1,16 @@
 <div *ngIf="vehicleModel">
     <h3>Vehicle Model Details</h3>
     
-    <strong>Model Name:</strong> {{ vehicleModel.name }}<br>
-    <strong>Brand Name:</strong> {{ vehicleModel.brand?.name || 'N/A' }}<br>
-    
+    <strong>Model Name: </strong> {{ vehicleModel.name }}<br>
+    <strong>Brand Name: </strong>
+    <button [routerLink]="['/brands/', vehicleModel.brand?.id]">{{ vehicleModel.brand?.name }}</button>
+    <br> 
     <h4>Model Years</h4>
     <ul>
       <li *ngFor="let modelYear of vehicleModel.vehicleModelYears">
         <strong>Name:</strong> {{ modelYear.name }}<br>
         <strong>Year:</strong> {{ modelYear.year }}<br>
-        <!-- <button (click)="goToModelYearDetails(modelYear.id)">View Details</button> -->
+        <button [routerLink]="['/vehicle-model-years/', modelYear.id]">View Details</button>
         <hr>
       </li>
     </ul>

@@ -44,7 +44,6 @@ export class BrandsComponent {
 
   onSelectModel(model: IVehicleModel): void {
     this.selectedModel = model;
-    console.log('Selected Model:', this.selectedModel);
   }
 
 }

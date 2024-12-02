@@ -14,6 +14,9 @@ export class RequestsService {
 
   constructor(private http: HttpClient) { }
 
+  getBrand(brandId: string): Observable<IBrand> {
+    return this.http.get<IBrand>(this.baseUrl + '/brands/' + brandId)
+  }
   listBrands(): Observable<IGenericList<IBrand>> {
     return this.http.get<IGenericList<IBrand>>(this.baseUrl + '/brands')
   }
@@ -32,7 +35,9 @@ export class RequestsService {
     }
     return this.http.get<IGenericList<IVehicleModel>>(this.baseUrl + '/vehicle-model', handleQuery)
   }
-
+  getVehicleModelYear(vehicleModelYear: string): Observable<IVehicleModelYear> {
+    return this.http.get<IVehicleModelYear>(this.baseUrl + '/vehicle-model-year/' + vehicleModelYear)
+  }
   listVehicleModelYears(): Observable<IVehicleModelYear[]> {
     return this.http.get<IVehicleModelYear[]>(this.baseUrl + '/vehicle-model-year')
   }

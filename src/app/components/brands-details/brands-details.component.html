@@ -1,0 +1,17 @@
+<div *ngIf="brand">
+    <h3>Brand Details</h3>
+  
+    <strong>Name:</strong> {{ brand.name }}<br>
+  
+    <h4>Associated Vehicle Models</h4>
+    <ul>
+      <li *ngFor="let model of brand.vehicleModels">
+        <strong>Model Name:</strong> {{ model.name }}
+        <button [routerLink]="['/vehicle-models/', model.id]"> {{ model.name }} </button>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="!brand">
+    <p>Loading brand details...</p>
+  </div>
